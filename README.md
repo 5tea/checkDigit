@@ -1,22 +1,36 @@
 # checkDigit
-
+```
 $check = new Luhn();
-$input = 1234;
+$integerA = 1234;
+$integerB = 12344;
+```
+## Calculate and return the check digit only.
+```
+$check -> calculate($integerA);
+// 4
+$check -> calculate($integerB);
+// 8
 
-# Return the check digit only
+## Calculate the check digit and append it to the input.
 ```
-echo $check -> calculate($input);
+$check -> append($integerA);
+// 12344
+$check -> append($integerB);
+// 123448
 ```
-*4*
 
-# Calculate the check digit and append it to $input
+## Validate the input.
 ```
-echo $check -> append($input);
+$check -> validate($integerA);
+// false
+$check -> validate($integerB);
+// true
 ```
-*12344*
 
-# Validate the $input
+## Validate and return Input with check digit removed.
 ```
-echo $check -> validate($input) ? "Valid" : "Invalid";
+$check -> remove($integerA);
+// false
+$check -> remove($integerB);
+// 1234
 ```
-*"Invalid"*
