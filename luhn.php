@@ -1,9 +1,10 @@
 <?php
 
 class Luhn {
+    
     public function calculate($input){
-        $length = strlen($input);
         $input = str_split($input, 1);
+        $length = count($input);
         $output = 0;
         $double = 0;
         for( $i = 1; $i <= $length; $i++ ){
@@ -28,9 +29,11 @@ class Luhn {
         return $checkDigit == self::calculate($input) ? true : false;
     }
 
-    public function append($input){
+    public function append($input) {
         return $input . self::calculate($input);
     }
-}
 
-?>
+    public function remove($input) {
+        return self::validate($input) ? intdiv($input, 10) : false;
+    }
+}
