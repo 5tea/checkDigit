@@ -2,8 +2,8 @@
 
 class Luhn {
     public function calculate($input){
+        $length = strlen($input);
         $input = str_split($input, 1);
-        $length = count($input);
         $output = 0;
         $double = 0;
         for( $i = 1; $i <= $length; $i++ ){
