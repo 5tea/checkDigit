@@ -29,7 +29,7 @@ $check -> validate($integerB);
 // true
 ```
 
-## Validate and return Input with check digit removed.
+## Validate and return input with check digit removed.
 ```
 $check -> remove($integerA);
 // false
