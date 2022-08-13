@@ -33,7 +33,7 @@ $check -> validate($integerB);
 ## Validate and return input with check digit removed.
 ```
 $check -> remove($integerA);
-// false
+// null
 $check -> remove($integerB);
 // 1234
 ```
