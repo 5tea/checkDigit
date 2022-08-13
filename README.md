@@ -1,5 +1,6 @@
 # checkDigit
 ```
+require_once 'checkDigit.php';
 $check = new Luhn();
 $integerA = 1234;
 $integerB = 12344;
