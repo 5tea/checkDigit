@@ -11,18 +11,14 @@ class Luhn {
             if($i & 1)
             {
                 $double = $input[$length-$i] * 2;
-                while ($double > 9)
-                {
-                    $double = str_split($double, 1);
-                    $double = array_sum($double);
-                }
-                $output += $double;
+                $output += ($double > 9) ? $double - 9 : $double;
             } else
             {
                 $output += $input[$length-$i];
             }
         }
-        return 10 - ($output % 10);
+        $result = ($output % 10);
+        return $result == 0 ? 0 : 10 - $result;
     }
     public function validate($input)
     {
